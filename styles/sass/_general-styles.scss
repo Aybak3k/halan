@@ -1,0 +1,37 @@
+//----- (1) Vars -------------------------
+
+$gaming-bgs: (
+    0: url('https://wallpaperaccess.com/full/782531.jpg')
+);
+
+
+//----- (2) mixins -------------------------
+
+@mixin element-bg(
+    $url: map-get($gaming-bgs, 0),
+    $left-clr: rgba(0, 0, 0, 0.3),
+    $right-clr: rgba(0, 0, 0, 0.7))
+{  
+    background: 
+        linear-gradient(to right, $left-clr, $right-clr),
+        url($url)
+        no-repeat center fixed;  
+    background-size: cover;
+}
+
+@mixin fluid-cols($min:200px, $max:1fr, $gap:20px){
+    display: grid;
+    grid: repeat(auto-fill, minmax($min, $max)) / auto;
+    gap: $gap;
+    place-items: center;
+}
+
+
+//----- (3) styles -------------------------
+
+* {margin:0;padding:0;box-sizing:border-box}
+:root {scroll-behavior: smooth}
+a {text-decoration: none}
+// figure {/* flex | grid >> width:auto */}
+img {max-width: 100%;object-fit: cover;}
+// ol, ul {list-style: none;}
