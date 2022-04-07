@@ -4,6 +4,8 @@ header {
     	grid-template-columns: repeat(6, 1fr) auto 1fr;
         place-content: center;
         padding: 20px 0 20px 0;
+        position: sticky;
+        z-index: 999;
 
         #logo-container {
         	grid-column: 2 / span 1;

@@ -40,25 +40,19 @@ $gaming-bgs: (
     border: 1px solid $border;
 }
 
-//----- (3) styles -------------------------
+//----- (3) Fixed General styles -------------------------
 
 * {margin:0;padding:0;box-sizing:border-box}
 :root {scroll-behavior: smooth}
 a {text-decoration: none}
 // figure {/* flex | grid >> width:auto */}
 img {max-width: 100%;object-fit: cover;}
-// ol, ul {list-style: none;}
+ol, ul {list-style: none;}
 
-header {
-    height: 100vh;
 
-    nav {
-        position: sticky;
-        z-index: 999;
+//----- (4) Changing General styles -------------------------
 
-        ul {
-            list-style-type: none;
-            display: flex;
-        }
-    }
+header {height: 100vh;}
+body {
+    font-family: lato;
 }

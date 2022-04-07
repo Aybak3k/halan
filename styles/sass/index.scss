@@ -5,15 +5,19 @@
 @import "navbar";
 
 
-// 4 debug
-* {
-    // @include debug;
-    font-family: "lato";
+// Temp
+// * {
+//     // @include debug;
+// }
+header {
+    nav {
+        background-color: var(--color2);
+    }
+    #logo-container span {
+        color: var(--color1);
+    }
+    a {
+        color: var(--color3);
+    }
 }
 
-
-// styles
-h1 {
-    color: var(--color3);
-    font-family: "lato";  // create var
-}
