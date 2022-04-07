@@ -11,7 +11,7 @@ mixin defMixinLogo()
 -
     const defLinksArr = [
         {'Home':'#'},
-        {'News': '#'},
+        ['News', '#'],  //- dropdown
         {'Contact': '#'},
         {'About': '#'}
     ]
@@ -54,11 +54,20 @@ mixin navBar(logo, linksArr)
             default
                 #logo-container #[span forgot quotes?]
 
+        //- Mobile Burger Menu
+        #nav-mobile
+            a#nav-toggle(href="#")
+                span
+
         //- Adding the Links
         - var linksArr = typeof linksArr != 'undefined' ? linksArr : defLinksArr
-        ul
-            each obj in linksArr
-                li #[a(href=obj[Object.keys(obj)]) #{Object.keys(obj)}]
-
-        input(type="checkbox", id="nav-toggle")
-        label(for="nav-toggle", id="nav-toggle-label") #[span X]
+        ul#nav-list
+            each link in linksArr
+                //- Check if passed "link" is actually a parent
+                if Object.keys(link).length > 0
+                    li 200
+                else
+                    li
+                        a(href=link[Object.keys(link)]) #{Object.keys(link)}                            
+                    //- ul#nav-dropdown
+                        //- li ...ul#nav-dropdown

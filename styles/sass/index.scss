@@ -3,6 +3,7 @@
 @import "colors";
 @import "fonts";
 @import "navbar";
+@import "media-q";
 
 
 // Temp
@@ -15,6 +16,7 @@ header {
     }
     #logo-container span {
         color: var(--color1);
+        font-weight: bold;
     }
     a {
         color: var(--color3);

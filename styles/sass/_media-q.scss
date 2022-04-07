@@ -1,0 +1,51 @@
+@media screen and (max-width: 800px) {
+    nav {
+    	grid-template-columns: repeat(8, 1fr) !important;
+        
+        label#nav-toggle-label {
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin-left: 1em;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            grid-column: -3 / span 1;
+        
+
+        // Burger Menu
+            span,
+            span::before,
+            span::after {
+                display: block;
+                background: var(--color3);
+                height: 2px;
+                width: 2em;
+                border-radius: 2px;
+                position: relative;
+            }
+            span::before,
+            span::after {
+                content: '';
+                position: absolute;
+            }
+            span::before {
+                top: 7px;
+            }
+            span::after {
+                bottom: 7px;
+            }
+        }
+
+        ul {
+            transform: scale(1, 0);
+            transform-origin: top;
+            transition: transform 400ms ease-in-out;
+
+            a {
+                opacity: 0;
+                transition: opacity 150ms ease-in-out;
+            }
+        }
+    }    
+}
