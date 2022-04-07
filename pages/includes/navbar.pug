@@ -1,0 +1,64 @@
+//- docs
+//- image >> PATH must start with either `./` || `/`
+
+
+//- Defaults
+//- - const defImgLogo = ''
+- const defTextLogo = 'logo$'
+mixin defMixinLogo()
+    em Logo$
+
+-
+    const defLinksArr = [
+        {'Home':'#'},
+        {'News': '#'},
+        {'Contact': '#'},
+        {'About': '#'}
+    ]
+
+
+//- Logo Nature Type Check Function
+-
+    const typeCheck = logoNode => {
+        if (/.*?(\/[\/\w\.]+)[\s\?]?.*/.test(logoNode)){
+            return 'image'
+        } else if (typeof logoNode == 'string'){
+            if (pug_mixins[logoNode]) {
+                return 'mixin'
+            } else {
+                return 'text'
+            }
+        } else if (logoNode === undefined){
+            return 'empty'
+        } else {
+            return 'invalid'
+        }
+    }
+
+
+//- Main Mixin
+mixin navBar(logo, linksArr)
+    nav
+        //- Determining Logo Nature
+        case typeCheck(logo)
+            when 'image'
+                - logo = typeof logo != 'undefined' ? logo : defImgLogo
+                figure#logo-container #[img(src=logo, alt="site's logo")]
+            when 'mixin'
+                - logo = typeof logo != 'undefined' ? logo : `defMixinLogo`
+                +#{logo}()
+            when 'text'
+            when 'empty'
+                - logo = typeof logo != 'undefined' ? logo : defTextLogo
+                #logo-container #[span #{logo}]
+            default
+                #logo-container #[span forgot quotes?]
+
+        //- Adding the Links
+        - var linksArr = typeof linksArr != 'undefined' ? linksArr : defLinksArr
+        ul
+            each obj in linksArr
+                li #[a(href=obj[Object.keys(obj)]) #{Object.keys(obj)}]
+
+        input(type="checkbox", id="nav-toggle")
+        label(for="nav-toggle", id="nav-toggle-label") #[span X]

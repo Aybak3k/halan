@@ -7,6 +7,7 @@ $gaming-bgs: (
 
 //----- (2) mixins -------------------------
 
+// adding backgrounds to elements
 @mixin element-bg(
     $url: map-get($gaming-bgs, 0),
     $left-clr: rgba(0, 0, 0, 0.3),
@@ -19,6 +20,7 @@ $gaming-bgs: (
     background-size: cover;
 }
 
+// a RWD must
 @mixin fluid-cols($min:200px, $max:1fr, $gap:20px){
     display: grid;
     grid: repeat(auto-fill, minmax($min, $max)) / auto;
@@ -26,6 +28,17 @@ $gaming-bgs: (
     place-items: center;
 }
 
+// Flex Positioning for Parent Elements 
+@mixin flex-position($x:center, $y:center) {
+    display: flex;
+    justify-content: $x;
+    align-items: $y;
+}
+
+// @debugging
+@mixin debug($border:red) {  // #9400ff
+    border: 1px solid $border;
+}
 
 //----- (3) styles -------------------------
 
@@ -35,3 +48,17 @@ a {text-decoration: none}
 // figure {/* flex | grid >> width:auto */}
 img {max-width: 100%;object-fit: cover;}
 // ol, ul {list-style: none;}
+
+header {
+    height: 100vh;
+
+    nav {
+        position: sticky;
+        z-index: 999;
+
+        ul {
+            list-style-type: none;
+            display: flex;
+        }
+    }
+}

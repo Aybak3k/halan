@@ -1,8 +1,19 @@
+// imports
 @import "general-styles";
 @import "colors";
 @import "fonts";
+@import "navbar";
 
+
+// 4 debug
+* {
+    // @include debug;
+    font-family: "lato";
+}
+
+
+// styles
 h1 {
     color: var(--color3);
-    font-family: "lato";
+    font-family: "lato";  // create var
 }

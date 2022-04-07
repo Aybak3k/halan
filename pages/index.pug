@@ -1,10 +1,22 @@
+//- includes
+include ./includes/head
+include ./includes/navbar
+
+
+//- Vars
+-
+    const brandName = '7alan'
+
+
+
+//- Page
 doctype html
 html(lang="en")
-    head
-        meta(charset="UTF-8")
-        meta(http-equiv="X-UA-Compatible", content="IE=edge")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title Title
-        link(rel="stylesheet", href="styles/css/index.css")
+
+    //- head
+    +head("7alan")
+
+    //- body
     body
-        h1 Testing
+        header
+            +navBar(brandName)

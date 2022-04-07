@@ -1,0 +1,40 @@
+header {
+    nav {
+        display: grid;
+    	grid-template-columns: repeat(6, 1fr) auto 1fr;
+        place-content: center;
+        padding: 20px 0 20px 0;
+
+        #logo-container {
+        	grid-column: 2 / span 1;
+        }
+
+        ul {
+            @include flex-position($x:flex-end);
+        	grid-column: 7 / span 1;
+
+            li {
+                margin-left: 3em;
+                &:last-child {
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+}
+
+figure#logo-container{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    @include flex-position;
+}
+
+input#nav-toggle {
+    display: none;
+}
+
+label#nav-toggle-label {
+    display: none;
+}
