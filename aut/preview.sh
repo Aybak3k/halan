@@ -1,1 +1,1 @@
-firefox ../index.html &
+firefox --new-window ../index.html &
