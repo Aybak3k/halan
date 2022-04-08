@@ -11,17 +11,17 @@ body{
   font-family: 'Poppins'
 }
 
-.navigation {
+header {
   height: $nav-height;
   background: $nav-background;
 }
 
-.nav-container {
+nav {
   max-width: $content-width;
   margin: 0 auto;
 }
 
-.brand {
+#logo-container {
   position: absolute;
   padding-left: 20px;
   float: left;
@@ -40,7 +40,7 @@ body{
   }
 }
 
-nav {
+#nav-container {
   float: right;
   ul {
       list-style: none;
@@ -109,7 +109,7 @@ nav {
   .nav-mobile {
     display: block;
   }
-  nav {
+  #nav-container {
       width: 100%;
       padding: $nav-height 0 15px;
     ul {
