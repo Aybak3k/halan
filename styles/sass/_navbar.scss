@@ -1,43 +1,178 @@
 header {
     nav {
-        display: grid;
-    	grid-template-columns: repeat(6, 1fr) auto 1fr;
-        place-content: center;
-        padding: 20px 0 20px 0;
-        position: fixed;
-        width: 100%;  // OR make it sticky
-        z-index: 999;
+        background-color: var(--color2);
+    }
+    #logo-container span {
+        color: var(--color1);
+        font-weight: bold;
+    }
+    a {
+        color: var(--color3);
+    }
+}
 
-        #logo-container {
-        	grid-column: 2 / span 1;
-        }
+header nav {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr) auto 1fr;
+    place-content: center;
+    padding: 20px 0 20px 0;
+    position: fixed;
+    width: 100%;  // OR make it sticky
+    height: 20%;  // ?
+    z-index: 999;
 
-        ul {
-            @include flex-position($x:flex-end);
-        	grid-column: 7 / span 1;
+    // if logo is img
+    figure#logo-container{
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        overflow: hidden;
+        @include flex-position;
+    }
 
-            li {
-                margin-left: 3em;
-                &:last-child {
-                    margin-right: 10px;
+    #logo-container {
+        grid-column: 2 / span 1;
+    }
+
+    #nav-mobile {
+        display: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: violet;
+        height: 70px;
+        width: 1000px;
+    }
+
+    // Links List
+    ul#nav-list {
+        @include flex-position($x:flex-end);
+        grid-column: 7 / span 1;
+
+        li {
+            margin-left: 3em;
+            &:last-child {
+                margin-right: 10px;
+            }
+
+            // Anchor Links
+            a {
+                    &::before {
+                    transition: 300ms;
+                    height: 5px;
+                    content: "";
+                    position: absolute;
+                    background-color: var(--color1);
+                    width: 0%;
+                    bottom: 0px;
+                    }
+
+                    &:hover::before{
+                    width: 70%;
+                    }
+
+                &:not(:only-child):after {
+                    padding-left: 4px;
+                    content: ' ▾';
+                }
+            }
+
+            // DropDown List
+            ul#nav-dropdown {
+
+                display: none;
+                position: absolute;
+                z-index: 1;
+                box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+
+                li {
+                    min-width: 190px;
+                    a {
+                        padding: 15px;
+                        line-height: 20px;
+                    }
                 }
             }
         }
     }
 }
 
-figure#logo-container{
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    overflow: hidden;
-    @include flex-position;
-}
 
-input#nav-toggle {
-    display: none;  // insteada position -9999
-}
+// // MQ
+// @media only screen and (max-width: 800px) {  // TODO: $breakpoint
+//     header nav {
 
-label#nav-toggle-label {
-    display: none;
-}
+//         ul#nav-list {
+//             display: none;
+
+//             a {
+//                 &:hover::before{
+//                     width: 20%;
+//                   }
+//             }
+
+//             ul#nav-dropdown {
+//                 position: static;
+//             }
+//         }
+
+//         #nav-mobile {
+
+//             display: block;
+
+//             #nav-toggle {
+//                 position: absolute;
+//                 left: 18px;
+//                 top: 22px;
+//                 cursor: pointer;
+//                 padding: 10px 35px 16px 0px;
+            
+//                 span,
+//                 span:before,
+//                 span:after {
+//                     cursor: pointer;
+//                     border-radius: 1px;
+//                     height: 5px;
+//                     width: 35px;
+//                     background: green;
+//                     position: absolute;
+//                     display: block;
+//                     content: '';
+//                     transition: all 300ms ease-in-out;
+//                 }
+            
+//                 span:before {
+//                     top: -10px;
+//                 }
+            
+//                 span:after {
+//                     bottom: -10px;
+//                 }
+            
+//                 &.active span {
+//                     background-color: transparent;
+            
+//                     &:before,
+//                     &:after {
+//                         top: 0;
+//                     }
+            
+//                     &:before {
+//                         transform: rotate(45deg);
+//                     }
+            
+//                     &:after {
+//                         transform: rotate(-45deg);
+//                     }
+//                 }
+//             }
+
+//         }
+//     }
+// }
+
+// @media screen and (min-width: 800px) {
+//     ul#nav-list {
+//       display: block !important;
+//     }
+// }

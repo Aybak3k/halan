@@ -3,23 +3,9 @@
 @import "colors";
 @import "fonts";
 @import "navbar";
-@import "media-q";
 
 
 // Temp
-// * {
-//     // @include debug;
-// }
-header {
-    nav {
-        background-color: var(--color2);
-    }
-    #logo-container span {
-        color: var(--color1);
-        font-weight: bold;
-    }
-    a {
-        color: var(--color3);
-    }
+.debug body * {
+    border: 1px solid $debug-border-color;
 }
-

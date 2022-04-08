@@ -35,10 +35,6 @@ $gaming-bgs: (
     align-items: $y;
 }
 
-// @debugging
-@mixin debug($border:red) {  // #9400ff
-    border: 1px solid $border;
-}
 
 //----- (3) Fixed General styles -------------------------
 
