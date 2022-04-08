@@ -1,40 +1,38 @@
-// float is better for langauge direction?
-
 header {
+    max-width: 100%;
     height: 100vh;
 
     nav {
         max-width: 100%;
-        margin: 0 auto;  // non-grid
+        margin: 0 auto;  // @float-approach << centering
 
         #logo-container {
-            // non-grid
-                position: absolute;
+            // @float-approach
+                position: absolute;  // ??
                 padding-left: 20px;
                 float: left;
-            // not important
-                line-height: 70px;
-                    // fixed size << nav-height!
+            // ?
+                line-height: 70px;  // fixed-size! - nav height
                 text-transform: uppercase;
-                font-size: 1.4em; // fixed size
-                color: var(--color1);
+                font-size: 1.4em; // fixed-size!
                 font-weight: bold;
+                color: var(--color1);
         }
 
         #nav-container {
-            float: right; // non-grid
+            float: right; // @float-approach
 
-            ul li {
-                // non-grid
-                    float: left;  // same line ~break~
+            ul li {  // #nav-list li
+                // @float-approach
+                    float: left;
                     position: relative;
 
                 a {
-                    // non-grid
+                    // @float-approach
                         display: block;
+                    // fixed-size! - ?
                         padding: 10px 20px 0 20px;
                         line-height: 50px; // fixed size
-                    // background: #fff;
                     color: var(--darkest);
                     font-weight: bold;
 
@@ -56,7 +54,118 @@ header {
                         content: ' ▾';
                     }
                 }
+
+                ul#nav-dropdown {
+                    display: none;
+                    position: absolute;  // decisive
+                    z-index: 1;
+                    box-shadow: 0 3px 12px var(--shadow);
+
+                    li {
+                        min-width: 190px;  // fixed-size!
+
+                        a {
+                            // fixed-size!
+                                padding: 15px;
+                                line-height: 20px;
+
+                            &:hover::before{
+                                width: 85%;
+                            }
+                        }
+                    }
+                }
             }
+
+            #nav-mobile {
+                display: none;
+                position: absolute;
+                top: 0;
+                right: 0;
+                height: 70px;  // fixed-size! - nav
+                width: 70px;  // fixed-size! - nav
+
+                #burger-menu {
+                    position: absolute;
+                    left: 18px;
+                    top: 22px;
+                    cursor: pointer;
+                    // fixed-size! ?
+                    padding: 10px 35px 16px 0px;
+
+                    span,
+                    span:before,
+                    span:after {
+                        cursor: pointer;
+                        border-radius: 1px;
+                        // fixed-size!
+                            height: 5px;
+                            width: 35px;
+                        background: var(--color1);
+                        position: absolute;
+                        display: block;
+                        content: '';
+                        transition: all 300ms ease-in-out;
+                    }
+
+                    span:before {top: -10px;}
+                    span:after {bottom: -10px;}
+
+                    &.active span {
+                        background-color: transparent;
+                        &:before,
+                        &:after{top: 0;}
+                        &:before {transform: rotate(45deg)}
+                        &:after {transform: rotate(-45deg)}
+                    }
+                }
+            }
+        }
+
+        // clearfix
+        &::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+    }
+}
+
+
+// MQ
+@media screen and (max-width: 800px) {
+    header nav #nav-container {
+        width: 100%;  // <>
+        padding: 70px 0 15px;  // fixed-size!
+
+        ul {
+            display: block;  // ?
+            
+            #nav-dropdown {
+                position: static;
+            }
+
+            li {
+                float: none;  // <>
+
+                a {
+                    // fixed-size!
+                        padding: 15px;
+                        line-height: 20px;
+
+                        &:hover::before{
+                            width: 20%;
+                        }
+                }
+
+                ul li a {
+                    padding-left: 30px;
+                }
+            }
+        }
+
+        #nav-mobile {
+            display: block;
         }
     }
 }
