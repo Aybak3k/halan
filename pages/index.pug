@@ -1,12 +1,7 @@
 //- includes
 include ./includes/head
 include ./includes/navbar
-
-
-//- Vars
--
-    const brandName = '7alan'
-
+include ./includes/site-info.pug
 
 
 //- Page
@@ -14,12 +9,12 @@ doctype html
 html(lang="en")
 
     //- head
-    +head("7alan")
+    +head(brandName)
 
     //- body
     body
         header
-            +navBar(brandName)
+            +navBar(logo)
 
         //- Scripts
         script(src="./scripts/navbar.js") 

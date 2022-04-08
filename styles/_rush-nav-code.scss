@@ -34,14 +34,12 @@ $link-hover-color: #f8b500;
   a,
   a:visited {
     color: $nav-font-color;
-    text-decoration: none;
   }
 }
 
 nav {
   float: right;
   ul {
-      list-style: none;
       margin: 0;
       padding: 0;
     li {
@@ -53,7 +51,6 @@ nav {
         line-height: 50px;
         background: $nav-background;
         color: $nav-font-color;
-        text-decoration: none;
         
         
          &::before {
