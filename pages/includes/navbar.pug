@@ -60,28 +60,31 @@ mixin navBar(logo, linksArr)
             default
                 #logo-container #[span forgot quotes?]
 
-        //- Mobile Burger Menu
-        #nav-mobile
-            a#nav-toggle(href="#")
-                span
+        //- for styling sake
+        #nav-container
 
-        //- Adding the Links
-        - var linksArr = typeof linksArr != 'undefined' ? linksArr : defLinksArr
-        ul#nav-list
-            each link in linksArr
-                //- Check if passed "link" is actually a parent
-                if link.length > 0
-                    li
+            //- Mobile Burger Menu
+            #nav-mobile
+                a#nav-toggle(href="#")
+                    span
 
-                        //- check if it's ! a link
-                        if link[0].length > 0
-                            | #{link[0]}
-                        else
-                            a(href=link[0][Object.keys(link[0])]) #{Object.keys(link[0])}
-                        ul#nav-dropdown
-                            each subLink in link[1]
-                                li
-                                    a(href=subLink[Object.keys(subLink)]) #{Object.keys(subLink)}
-                else
-                    li
-                        a(href=link[Object.keys(link)]) #{Object.keys(link)}
+            //- Adding the Links
+            - var linksArr = typeof linksArr != 'undefined' ? linksArr : defLinksArr
+            ul#nav-list
+                each link in linksArr
+                    //- Check if passed "link" is actually a parent
+                    if link.length > 0
+                        li
+
+                            //- check if it's ! a link
+                            if link[0].length > 0
+                                | #{link[0]}
+                            else
+                                a(href=link[0][Object.keys(link[0])]) #{Object.keys(link[0])}
+                            ul#nav-dropdown
+                                each subLink in link[1]
+                                    li
+                                        a(href=subLink[Object.keys(subLink)]) #{Object.keys(subLink)}
+                    else
+                        li
+                            a(href=link[Object.keys(link)]) #{Object.keys(link)}
