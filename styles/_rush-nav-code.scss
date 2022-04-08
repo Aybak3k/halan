@@ -1,3 +1,6 @@
+// 1. #nav-mobile
+// 2. ul#nav-dropdown
+
 $content-width: 1000px;
 $breakpoint: 799px;
 $nav-height: 70px;
@@ -24,9 +27,9 @@ $link-hover-color: #f8b500;
   text-transform: uppercase;
   font-size: 1.4em;
   
-  &:hover{
+  // &:hover{
     
-  }
+  // }
 
   a,
   a:visited {

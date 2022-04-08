@@ -12,7 +12,7 @@ mixin defMixinLogo()
     const defLinksArr = [
         {'Home':'#'},
         [
-            {'News': '#'},
+            "News",
             [
                 {'New':'#'},
                 {'Old':'#'}
@@ -72,7 +72,12 @@ mixin navBar(logo, linksArr)
                 //- Check if passed "link" is actually a parent
                 if link.length > 0
                     li
-                        a(href=link[0][Object.keys(link[0])]) #{Object.keys(link[0])}
+
+                        //- check if it's ! a link
+                        if link[0].length > 0
+                            | #{link[0]}
+                        else
+                            a(href=link[0][Object.keys(link[0])]) #{Object.keys(link[0])}
                         ul#nav-dropdown
                             each subLink in link[1]
                                 li
@@ -80,11 +85,3 @@ mixin navBar(logo, linksArr)
                 else
                     li
                         a(href=link[Object.keys(link)]) #{Object.keys(link)}
-
-//- if no link
-
-                        if link[0].length == 1
-                            p ok
-                            //- Object.keys(link[0])]
-                        else
-                            a(href=link[0][Object.keys(link[0])]) #{Object.keys(link[0])}
