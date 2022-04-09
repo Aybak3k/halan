@@ -1,0 +1,23 @@
+//- includes manager
+include ../includes/spc-manager.pug
++loadBasicIncludes()
+
+//- TEMP << cz local vars are lost in 2 includes..
+include ../includes/spc-data.pug
+
+
+
+//- DOCTYPE
+doctype html
+html(lang="en")
+
+    //- <head>
+    +head(brandName)
+
+    //- <body>
+    body 
+        header
+            +navBar(logo, loginLinks)
+
+        //- Essential Scripts
+        +loadScripts()

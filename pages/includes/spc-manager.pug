@@ -1,0 +1,8 @@
+mixin loadBasicIncludes()
+        include head
+        include navbar
+
+mixin loadScripts(scriptsPath="../../scripts/")
+        script(src=scriptsPath+"jquery.min.js")
+        script(src=scriptsPath+"navbar.js")
+        script(src=scriptsPath+"toggle-debug.js")
