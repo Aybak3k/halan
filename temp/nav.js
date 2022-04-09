@@ -13,10 +13,10 @@
         $('.nav-dropdown').hide()
       })
       // Toggle open and close nav styles on click
-      $('#nav-toggle').click(function() {
+      $('#burger-menu').click(function() {
         $('nav ul').slideToggle();
       });
-      $('#nav-toggle').on('click', function() {
+      $('#burger-menu').on('click', function() {
         this.classList.toggle('active')
       })
     })

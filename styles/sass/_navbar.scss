@@ -22,55 +22,61 @@ header {
         #nav-container {
             float: right; // @float-approach
 
-            ul li {  // #nav-list li
-                // @float-approach
-                    float: left;
-                    position: relative;
+            ul {
 
-                a {
+                li {  // #nav-list li
                     // @float-approach
-                        display: block;
-                    // fixed-size! - ?
-                        padding: 10px 20px 0 20px;
-                        line-height: 50px; // fixed size
-                    color: var(--darkest);
-                    font-weight: bold;
+                        float: left;
+                        position: relative;
 
-                    &::before {
-                        transition: 300ms;
-                        height: 5px;
-                        content: "";
-                        position: absolute;
-                        background-color: var(--color1);
-                        width: 0%;
-                        bottom: 0px;
+                    a {
+                        // @float-approach
+                            display: block;
+                        // fixed-size! - ?
+                            padding: 10px 20px 0 20px;
+                            line-height: 50px; // fixed size
+                        color: var(--darkest);
+                        font-weight: bold;
+
+                        &::before {
+                            transition: 300ms;
+                            height: 5px;
+                            content: "";
+                            position: absolute;
+                            background-color: var(--color1);
+                            width: 0%;
+                            bottom: 0px;
+                        }
+
+                        &:hover::before{
+                            width: 70%;
+                        }
+                        &:not(:only-child):after {
+                            padding-left: 4px;
+                            content: ' ▾';
+                        }
                     }
 
-                    &:hover::before{
-                        width: 70%;
-                    }
-                    &:not(:only-child):after {
-                        padding-left: 4px;
-                        content: ' ▾';
-                    }
-                }
+                    ul#nav-dropdown {
+                        &.display-none {
+                            display: none;
+                        }
 
-                ul#nav-dropdown {
-                    display: none;
-                    position: absolute;  // decisive
-                    z-index: 1;
-                    box-shadow: 0 3px 12px var(--shadow);
+                        position: absolute;  // decisive
+                        z-index: 1;
+                        box-shadow: 0 3px 12px var(--shadow);
 
-                    li {
-                        min-width: 190px;  // fixed-size!
+                        li {
+                            min-width: 190px;  // fixed-size!
 
-                        a {
-                            // fixed-size!
-                                padding: 15px;
-                                line-height: 20px;
+                            a {
+                                // fixed-size!
+                                    padding: 15px;
+                                    line-height: 20px;
 
-                            &:hover::before{
-                                width: 85%;
+                                &:hover::before{
+                                    width: 85%;
+                                }
                             }
                         }
                     }
@@ -139,14 +145,16 @@ header {
         padding: 70px 0 15px;  // fixed-size!
 
         ul {
-            display: block;  // ?
-            
-            #nav-dropdown {
-                position: static;  // ?
+            &.display-none {
+                display: none;
             }
 
             li {
                 float: none;  // <>
+
+                ul#nav-dropdown {
+                    position: static;
+                }
 
                 a {
                     // fixed-size!
