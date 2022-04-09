@@ -10,7 +10,12 @@ mixin defMixinLogo()
 
 -
     const defLinksArr = [
-        {'Home':'#'},
+        [
+            {'Sign Up':'#!'},
+            [
+                {'Log in':'#!'}
+            ]
+        ],
         [
             {'News':'#!'},
             [
@@ -81,7 +86,7 @@ mixin navBar(logo, linksArr)
                                 | #{link[0]}
                             else
                                 a(href=link[0][Object.keys(link[0])]) #{Object.keys(link[0])}
-                            ul#nav-dropdown
+                            ul.nav-dropdown
                                 each subLink in link[1]
                                     li
                                         a(href=subLink[Object.keys(subLink)]) #{Object.keys(subLink)}

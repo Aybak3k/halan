@@ -4,13 +4,19 @@ include ./includes/navbar
 include ./includes/site-info.pug
 
 
-//- Basic in * pages
-+head(brandName)
+//- DOCTYPE
+doctype html
+html(lang="en")
 
-//- rest of `body`
-header
-    +navBar(logo)
+    //- <head>
+    +head(brandName)
 
-//- Scripts @TODO
-script(src="./scripts/navbar.js")
-script(src="./scripts/toggle-debug.js")
+    //- <body>
+    body 
+        header
+            +navBar(logo)
+
+        //- Scripts @TODO
+        script(src="./scripts/jquery.min.js")
+        script(src="./scripts/navbar.js")
+        script(src="./scripts/toggle-debug.js")

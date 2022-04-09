@@ -1,20 +1,3 @@
-## Basis
-
-- design ideas << colors, fonts
-- components && styles
-
-___
-<br><br>
-
-
-## Navbar
-
-T_T
-
-___
-<br><br>
-
-
 ## Login
 
 - google search

@@ -57,14 +57,11 @@ header {
                         }
                     }
 
-                    ul#nav-dropdown {
-                        &.display-none {
-                            display: none;
-                        }
-
+                    ul.nav-dropdown {
                         position: absolute;  // decisive
                         z-index: 1;
                         box-shadow: 0 3px 12px var(--shadow);
+                        display: none;
 
                         li {
                             min-width: 190px;  // fixed-size!
@@ -145,14 +142,12 @@ header {
         padding: 70px 0 15px;  // fixed-size!
 
         ul {
-            &.display-none {
-                display: none;
-            }
-
+            display: none;
+            
             li {
                 float: none;  // <>
 
-                ul#nav-dropdown {
+                ul.nav-dropdown {
                     position: static;
                 }
 
@@ -177,3 +172,11 @@ header {
         }
     }
 }
+
+
+// to overwrite script
+@media screen and (min-width: 800px) {
+    #nav-list {
+      display: block !important;
+    }
+  }
