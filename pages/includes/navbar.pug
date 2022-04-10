@@ -57,7 +57,7 @@ mixin navBar(logo, linksArr)
                 figure#logo-container #[img(src=logo, alt="site's logo")]
             when 'mixin'
                 - logo = typeof logo != 'undefined' ? logo : `defMixinLogo`
-                +#{logo}()
+                +#{logo}()  // Y! jus +logo()?
             when 'text'
             when 'empty'
                 - logo = typeof logo != 'undefined' ? logo : defTextLogo

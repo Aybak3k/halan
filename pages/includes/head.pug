@@ -1,4 +1,6 @@
-mixin head(title= "My Title", stylesPath="../../styles/css/")
+//- TODO: customHead is not a function
+
+mixin head(title= "My Title", stylesPath="../../styles/css/", customHead)
         head
             meta(charset="UTF-8")
             meta(http-equiv="X-UA-Compatible", content="IE=edge")
@@ -6,3 +8,4 @@ mixin head(title= "My Title", stylesPath="../../styles/css/")
             title= title
             link(rel="stylesheet", href=stylesPath+"index.css")
             //- link(rel="icon", href=""+image)
+            +customHead()

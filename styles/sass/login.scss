@@ -1,0 +1,83 @@
+@import "index.scss";
+
+main {
+    width:360px;
+    height:500px;
+    // @include flex-position;
+    position: absolute;
+    top:55%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    padding: 50px;
+    box-shadow: 0 3px 12px var(--shadow);
+    border-radius: 10px;
+
+    * {
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    span.icon {
+        background: var(--color1);
+        border: 10px solid var(--color1);
+        border-radius: 50%;
+        @include flex-position();
+        width: 70px;
+        height: 70px;
+        path {
+            fill: var(--color2);
+        }
+    }
+
+    form {
+        * {
+            margin: 0 auto;
+        }
+
+        width: 100%;
+
+            input {
+            width: 80%;
+            padding: 7px 15px;
+            margin: 0 auto;
+            // border: var(--color3);
+
+            &[type=submit] {
+                all: unset;
+                cursor: pointer;
+                background: var(--color1);
+                color: var(--color2);
+                padding: 12px 20px;
+                border-radius: 6px;
+                transition: all 300ms ease-in-out;
+                font-size: 1.1em;
+                font-weight: bold;
+
+                &:hover {
+                    background: var(--color1-darker);
+                }
+            }
+        }
+    }
+
+    a,
+    a.vistited {
+        color: var(--color1);
+        text-decoration: underline;
+    }
+}
+
+@media screen and (max-width:600px) {
+    main {
+        width:320px;
+        height:450px;
+    }
+}
+
+@media screen and (max-width:430px) {
+    main {
+        width:280px;
+    }
+}

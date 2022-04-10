@@ -5,6 +5,8 @@ header {
     nav {
         max-width: 100%;
         margin: 0 auto;  // @float-approach << centering
+        box-shadow: 0 3px 12px var(--shadow);
+        // height: 8.5vh;
 
         #logo-container {
             // @float-approach
