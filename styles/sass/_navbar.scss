@@ -1,12 +1,13 @@
 header {
     max-width: 100%;
     height: 100vh;
+    // position: relative;
 
     nav {
         max-width: 100%;
         margin: 0 auto;  // @float-approach << centering
         box-shadow: 0 3px 12px var(--shadow);
-        // height: 8.5vh;
+        height: 60px;  // fixed-size!
 
         #logo-container {
             // @float-approach
@@ -138,7 +139,16 @@ header {
 
 
 // MQ
-@media screen and (max-width: 800px) {
+
+// overwrite script so that when it's bigger than $width
+// the nav shows the bi-screens way
+@media all and (min-width: $width) {
+    #nav-list {
+      display: block !important;
+    }
+}
+
+@media all and (max-width: $width) {
     header nav #nav-container {
         width: 100%;  // <>
         padding: 70px 0 15px;  // fixed-size!
@@ -174,11 +184,3 @@ header {
         }
     }
 }
-
-
-// to overwrite script
-@media screen and (min-width: 800px) {
-    #nav-list {
-      display: block !important;
-    }
-  }

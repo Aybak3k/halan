@@ -29,10 +29,18 @@ $gaming-bgs: (
 }
 
 // Flex Positioning for Parent Elements 
-@mixin flex-position($x:center, $y:center) {
+@mixin flex-position($x:center, $y:center, $dir:row) {
     display: flex;
     justify-content: $x;
     align-items: $y;
+    flex-direction: $dir;
+}
+
+@mixin self-centering($top:50%, $left:50%) {
+    position: absolute;
+    top:$top;
+    left:$left;
+    transform: translate(-50%, -50%);
 }
 
 

@@ -1,1 +1,1 @@
-pug -w ../pages/watch/index.pug -o ../
+pug -w ../pages/index/index.pug -o ../
