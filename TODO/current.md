@@ -1,8 +1,3 @@
 - make form styles sharable
-- create sign up page
-    - fname
-    - lname
-    - telephone number
-    - email
-    - create passwd
-    - confirm passwd
+- add label && icons && animate label 
+- js form validation

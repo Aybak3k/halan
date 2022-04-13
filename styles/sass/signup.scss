@@ -5,7 +5,7 @@
 
 main {
     width:360px;
-    height:500px;
+    height:600px;
     @include self-centering($top:55%);
     padding: 35px;
     box-shadow: 0 3px 12px var(--shadow);
@@ -13,7 +13,7 @@ main {
     // grid-method
         display: grid;
         place-items: center;
-        grid-template-rows: 1fr 2.7fr .8fr;
+        grid-template-rows: .5fr 3.5fr;
 
     span.icon {
         background: var(--color1);
@@ -69,18 +69,6 @@ main {
                     background: var(--color1-darker);
                 }
             }
-        }
-    }
-
-    a {
-        &, &:visited {
-            color: var(--color1);
-            text-decoration: underline;
-            transition: all 300ms ease-in-out;
-        }
-
-        &:hover {
-            color: var(--color1-darker);
         }
     }
 }
