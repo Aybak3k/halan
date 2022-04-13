@@ -13,13 +13,13 @@ main {
     // grid-method
         display: grid;
         place-items: center;
-        grid-template-rows: 1.5fr 2.7fr .8fr;
+        grid-template-rows: 1fr 2.7fr .8fr;
 
     span.icon {
         background: var(--color1);
         border: 10px solid var(--color1);
         border-radius: 50%;
-        @include flex-position;
+        @include flex-position;  // flex-method
         width: 70px;
         height: 70px;
         path {
@@ -33,28 +33,36 @@ main {
             height: 100%;  // essential for the flex to work
             @include flex-position($y:center, $x:space-around, $dir:column);
 
-            ::placeholder {  // TODO: 1
+            ::placeholder {
                 color: var(--darkest);
+                font-weight: normal;
             }
 
-            input {  // TODO: 2
-            // all: unset;
+            input {
             width: 80%;
             padding: 7px 15px;
             border: none;
+            outline: none;
             border-bottom: 1px solid var(--color1);
+            background: transparent;
+            transition: all 300ms ease-in-out;
+            color: var(--darkest);
+            font-weight: bold;
+            &:focus {
+                border-bottom: 1px solid var(--darkest);
+            }
 
             &[type=submit] {
                 all: unset;
                 cursor: pointer;
                 background: var(--color1);
                 color: var(--color2);
-                padding: 12px 20px;
+                padding: 4% 7%;
                 border-radius: 6px;
                 transition: all 300ms ease-in-out;
                 font-size: 1.1em;
                 font-weight: bold;
-                width:56.6px;
+                width:15%;  // text-fixed-size
 
                 &:hover {
                     background: var(--color1-darker);
@@ -80,11 +88,19 @@ main {
     main {
         width:320px;
         height:450px;
+        
+        form input[type=submit] {
+        width: 17%;  // text-fixed-size
+        }
     }
 }
 
 @media screen and (max-width:430px) {
     main {
         width:280px;
+
+        form input[type=submit] {
+        width: 20%;    // text-fixed-size
+        }
     }
 }
