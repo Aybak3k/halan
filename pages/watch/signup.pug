@@ -30,6 +30,14 @@ html(lang="en")
                     input(type="email", name="uemail", placeholder="Email")
                     input(type="password", name="upassword", placeholder="Create Password")
                     input(type="password", name="uconfirmpassword", placeholder="Confirm Password")
+                    fieldset#radio-wrapper
+                        legend I'm a
+                        .group
+                            label(for="customer") Customer
+                            input(type="radio", name="role" value="Customer" id="customer")
+                        .group
+                            label(for="worker") Worker
+                            input(type="radio", name="role" value="Worker" id="worker")
                     input(type="submit", value="Sign Up")
 
         //- Essential Scripts

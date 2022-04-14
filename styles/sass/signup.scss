@@ -2,7 +2,29 @@
 
 main#form-container {
     @include form-container-styles(
-        $height: 600px,
+        $height: 620px,
         $rows: .5fr 3.5fr
-    )
+    );
+
+    fieldset#radio-wrapper {
+        border: none;
+        padding-top: 12px;
+        @include flex-position($x:space-around);
+        width: 80%;  // same as input
+
+        .group {
+            width: auto;
+            @include flex-position($x:space-evenly);
+
+            label {
+                margin-right: 6px;
+            }
+
+            * {
+                cursor: pointer;
+            }
+        }
+    }
 }
+
+@import "form-container-mq";
