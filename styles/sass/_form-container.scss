@@ -7,7 +7,7 @@
     width:360px;
     height:$height;
     padding: 35px;
-    box-shadow: 0 3px 12px var(--shadow);
+    @include box-shadow;
     border-radius: 10px;
     @include self-centering($top:55%);
     // grid-method
@@ -33,12 +33,12 @@
             height: 100%;  // essential for the flex to work
             @include flex-position($y:center, $x:space-evenly, $dir:column);
 
-            ::placeholder {
-                color: var(--darkest);
-                font-weight: normal;
-            }
+        ::placeholder {
+            color: var(--darkest);
+            font-weight: normal;
+        }
 
-            input {
+        input {
             width: 80%;
             padding: 7px 15px;
             border: none;
@@ -48,6 +48,7 @@
             transition: all $transition-duration ease-in-out;
             color: var(--darkest);
             font-weight: bold;
+            
             &:focus {
                 border-bottom: 1px solid var(--darkest);
             }

@@ -70,7 +70,7 @@ mixin navBar(logo, linksArr)
 
             //- Mobile Burger Menu
             #nav-mobile
-                a#burger-menu(href="#")
+                a#burger-menu(data-href="#")
                     span
 
             //- Adding the Links
@@ -85,11 +85,11 @@ mixin navBar(logo, linksArr)
                             if link[0].length > 0
                                 | #{link[0]}
                             else
-                                a(href=link[0][Object.keys(link[0])]) #{Object.keys(link[0])}
+                                a(data-href=link[0][Object.keys(link[0])]) #{Object.keys(link[0])}
                             ul.nav-dropdown
                                 each subLink in link[1]
                                     li
-                                        a(href=subLink[Object.keys(subLink)]) #{Object.keys(subLink)}
+                                        a(data-href=subLink[Object.keys(subLink)]) #{Object.keys(subLink)}
                     else
                         li
-                            a(href=link[Object.keys(link)]) #{Object.keys(link)}
+                            a(data-href=link[Object.keys(link)]) #{Object.keys(link)}

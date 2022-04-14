@@ -6,7 +6,7 @@ header {
     nav {
         max-width: 100%;
         margin: 0 auto;  // @float-approach << centering
-        box-shadow: 0 3px 12px var(--shadow);
+        @include box-shadow;
         height: 60px;  // fixed-size!
 
         #logo-container {
@@ -64,7 +64,7 @@ header {
                     ul.nav-dropdown {
                         position: absolute;  // decisive
                         z-index: 1;
-                        box-shadow: 0 3px 12px var(--shadow);
+                        @include box-shadow;
                         display: none;
 
                         li {

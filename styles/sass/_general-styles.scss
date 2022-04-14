@@ -43,12 +43,16 @@ $gaming-bgs: (
     transform: translate(-50%, -50%);
 }
 
+@mixin box-shadow {
+    box-shadow: 0 3px 12px var(--shadow);
+}
 
 //----- (3) Fixed General styles -------------------------
 
 * {margin:0;padding:0;box-sizing:border-box}
 :root {scroll-behavior: smooth}
-a {text-decoration: none;color: var(--color1); transition: all 300ms ease-in-out;&:hover{color: var(--color1-darker)}}
+::selection {color: var(--color2);background: var(--color1);}
+a {text-decoration: none;color: var(--color1); transition: all 300ms ease-in-out;&:hover{color: var(--color1-darker)};cursor: pointer;}
 // figure {/* flex | grid >> width:auto */}
 img {max-width: 100%;object-fit: cover;}
 ol, ul {list-style: none;}
