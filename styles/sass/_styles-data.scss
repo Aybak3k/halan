@@ -1,11 +1,15 @@
-// root, root.dark  >>  JS
-// non fixed identifiers && descriptive
-    // one-d  >>  primary
-    // two-d  >>  secondary ...
+// SASS Vars
+$debug-border-color: rgb(33, 13, 146);
+$mq-max-width: 799px;
+$transition-duration: 300ms;
 
+// CSS Vars (to be changed with JS)
 :root {
-    --color1-darker: #e2670e;
-    --color1: #fd6d03;
+    // personal temp
+        // --color1: #fd6d03;
+        --color1: #f00;
+        // --color1-darker: #e2670e;
+        --color1-darker: #d00;
     --color2: #ffffff;
     --color3: #4C5270;
     --color4: #36eee0;
@@ -13,7 +17,3 @@
     --darkest: #333;
     --shadow: rgba(0, 0, 0, 0.15);
 }
-
-
-$debug-border-color: rgb(26, 228, 36);
-$width: 799px;

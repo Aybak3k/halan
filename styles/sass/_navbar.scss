@@ -42,7 +42,7 @@ header {
                         font-weight: bold;
 
                         &::before {
-                            transition: 300ms;
+                            transition: $transition-duration;
                             height: 5px;
                             content: "";
                             position: absolute;
@@ -57,6 +57,7 @@ header {
                         &:not(:only-child):after {
                             padding-left: 4px;
                             content: ' ▾';
+                            color: var(--color1);
                         }
                     }
 
@@ -111,7 +112,7 @@ header {
                         position: absolute;
                         display: block;
                         content: '';
-                        transition: all 300ms ease-in-out;
+                        transition: all $transition-duration ease-in-out;
                     }
 
                     span:before {top: -10px;}
@@ -140,15 +141,15 @@ header {
 
 // MQ
 
-// overwrite script so that when it's bigger than $width
+// overwrite script so that when it's bigger than $mq-max-width
 // the nav shows the bi-screens way
-@media all and (min-width: $width) {
+@media all and (min-width: $mq-max-width) {
     #nav-list {
       display: block !important;
     }
 }
 
-@media all and (max-width: $width) {
+@media all and (max-width: $mq-max-width) {
     header nav #nav-container {
         width: 100%;  // <>
         padding: 70px 0 15px;  // fixed-size!

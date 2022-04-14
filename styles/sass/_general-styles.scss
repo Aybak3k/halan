@@ -48,7 +48,7 @@ $gaming-bgs: (
 
 * {margin:0;padding:0;box-sizing:border-box}
 :root {scroll-behavior: smooth}
-a {text-decoration: none}
+a {text-decoration: none;color: var(--color1); transition: all 300ms ease-in-out;&:hover{color: var(--color1-darker)}}
 // figure {/* flex | grid >> width:auto */}
 img {max-width: 100%;object-fit: cover;}
 ol, ul {list-style: none;}

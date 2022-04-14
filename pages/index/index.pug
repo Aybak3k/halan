@@ -5,14 +5,16 @@ include ../includes/spc-manager.pug
 //- TEMP << cz local vars are lost in 2 includes..
 include ../includes/spc-data.pug
 
-
+//- Mixins
+mixin customHead()
+    link(rel="stylesheet", href=indexStylesPath+"index.css")
 
 //- DOCTYPE
 doctype html
 html(lang="en")
 
     //- <head>
-    +head(brandName, indexStylesPath)
+    +head(brandName, customHead)
 
     //- <body>
     body 
