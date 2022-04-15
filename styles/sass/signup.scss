@@ -1,27 +1,34 @@
 @import "form-container";
 
-main#form-container {
-    @include form-container-styles(
-        $height: 620px,
-        $rows: .5fr 3.5fr
-    );
+body {
+    height: 3000px
+}
 
-    fieldset#radio-wrapper {
-        border: none;
-        padding-top: 12px;
-        @include flex-position($x:space-around);
-        width: 80%;  // same as input
+main {
+    @include flex-position;
+    width: 100%;
+    height: 100%;
 
-        .group {
-            width: auto;
-            @include flex-position($x:space-evenly);
+    #form-container {
+        @include form-container-styles(2);
 
-            label {
-                margin-right: 6px;
-            }
+        fieldset#radio-wrapper {
+            border: none;
+            padding-top: 12px;
+            @include flex-position($x:space-around);
+            width: 80%;  // same as input
 
-            * {
-                cursor: pointer;
+            .group {
+                width: auto;
+                @include flex-position($x:space-evenly);
+
+                label {
+                    margin-right: 6px;
+                }
+
+                * {
+                    cursor: pointer;
+                }
             }
         }
     }

@@ -1,5 +1,5 @@
 // SASS Vars
-$debug-border-color: rgb(33, 13, 146);
+$debug-border-color: rgb(26, 212, 218);
 $mq-max-width: 799px;
 $transition-duration: 300ms;
 
@@ -9,7 +9,7 @@ $transition-duration: 300ms;
         // --color1: #fd6d03;
         --color1: #f00;
         // --color1-darker: #e2670e;
-        --color1-darker: #b00;
+        --color1-darker: #d00;
     --color2: #fff;
     --darkest: #333;
     --color3: #4C5270;
@@ -17,3 +17,12 @@ $transition-duration: 300ms;
     --color5: #bcece0;
     --shadow: rgba(0, 0, 0, 0.15);
 }
+
+// Personal Temp
+// :root {
+    // --color1: #fff;
+    // --color1-darker: rgb(214, 211, 238);
+    // --color2: rgb(15, 10, 82);
+    // --darkest: rgb(192, 192, 196);
+    // --shadow: rgba(188, 192, 204, 0.15);
+// }

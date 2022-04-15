@@ -2,18 +2,23 @@
 @import "index";
 
 
+// Vars
+$input-margin-top: 40px;  // insteada using `!important`
 
-@mixin form-container-styles($height: 1000px, $rows: 1fr 3fr 1fr) {
-    width:360px;
-    height:$height;
-    padding: 35px;
+
+
+@mixin form-container-styles($rows-num) {
+    width:320px;
+    min-height:120px;
+    padding: 47px 27px 60px;
     @include box-shadow;
+    // outline: 1px solid var(--color1);
     border-radius: 10px;
-    @include self-centering($top:55%);
+    background: var(--color2);
     // grid-method
         display: grid;
         place-items: center;
-        grid-template-rows: $rows;
+        grid-template-rows: repeat($rows-num, minmax(min-content, max-content));
 
     span.icon {
         background: var(--color1);
@@ -31,7 +36,7 @@
         width: 100%;
         // flex-method
             height: 100%;  // essential for the flex to work
-            @include flex-position($y:center, $x:space-evenly, $dir:column);
+            @include flex-position($y:center, $x:flex-start, $dir:column);
 
         ::placeholder {
             color: var(--darkest);
@@ -48,6 +53,7 @@
             transition: all $transition-duration ease-in-out;
             color: var(--darkest);
             font-weight: bold;
+            margin-top: $input-margin-top;
             
             &:focus {
                 border-bottom: 1px solid var(--darkest);
@@ -64,6 +70,7 @@
                 font-size: 1.1em;
                 font-weight: bold;
                 flex-basis: auto;
+                margin-top: ($input-margin-top + 10);
 
                 &:hover,
                 &:focus {
@@ -73,5 +80,5 @@
         }
     }
 
-    a {text-decoration: underline;}  // // @form-container !existent
+    a {text-decoration: underline;margin-top: ($input-margin-top + 10px);}  // // @form-container !existent
 }

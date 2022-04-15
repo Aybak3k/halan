@@ -1,13 +1,16 @@
 header {
     max-width: 100%;
     height: 100vh;
-    // position: relative;
+    position: relative;
+    background: var(--color2);
 
     nav {
-        max-width: 100%;
+        width: 100%;
         margin: 0 auto;  // @float-approach << centering
         @include box-shadow;
         height: 60px;  // fixed-size!
+        // position: fixed;
+        background: var(--color2);
 
         #logo-container {
             // @float-approach

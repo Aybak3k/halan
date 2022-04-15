@@ -1,10 +1,13 @@
 @import "form-container";
 
-main#form-container {
-    @include form-container-styles(
-        $height: 500px,
-        $rows: 1fr 2.7fr .8fr
-    )
+main {
+    @include flex-position;
+    width: 100%;
+    height: 100%;
+
+    #form-container {
+        @include form-container-styles(3)
+    }
 }
 
 @import "form-container-mq";
