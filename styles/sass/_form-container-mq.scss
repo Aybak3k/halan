@@ -5,29 +5,33 @@
 }
 
 @media screen and (max-width:430px) {
-    main#form-container {
-        width:280px;
+    main {
+        padding: 0;
 
-        fieldset#radio-wrapper {
-            flex-direction: column;
-            align-items: flex-start;
-            justify-content: space-between;
-            
-            .group {
-                width: 150px;
-                padding: 3px;
+        #form-container {
+            width:300px;
+
+            fieldset#radio-wrapper {
+                flex-direction: column;
+                align-items: flex-start;
                 justify-content: space-between;
+                
+                .group {
+                    width: 150px;
+                    padding: 3px;
+                    justify-content: space-between;
 
-                &:last-child {
-                    padding-bottom: 5px;
+                    &:last-child {
+                        padding-bottom: 5px;
 
-                    label {
-                        margin-right: 8px;
+                        label {
+                            margin-right: 8px;
+                        }
                     }
-                }
 
-                * {
-                    width: 50%;
+                    * {
+                        width: 50%;
+                    }
                 }
             }
         }
