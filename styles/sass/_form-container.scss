@@ -65,7 +65,8 @@
                 font-weight: bold;
                 flex-basis: auto;
 
-                &:hover {
+                &:hover,
+                &:focus {
                     background: var(--color1-darker);
                 }
             }
