@@ -1,12 +1,15 @@
 @media screen and (max-width:600px) {
-    main#form-container {
-        width:320px;
+    main {
+        #form-container {
+            width:320px;
+        }
     }
 }
 
 @media screen and (max-width:430px) {
     main {
-        padding: 0;
+        padding-right: 0;
+        padding-left: 0;
 
         #form-container {
             width:300px;
