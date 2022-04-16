@@ -7,7 +7,7 @@ include ../includes/spc-data.pug
 
 //- Mixins
 mixin customHead()
-    link(rel="stylesheet", href=indexStylesPath+"index.css")
+    link(rel="stylesheet", href=indexStylesPath+"hero-sec.css")
 
 //- DOCTYPE
 doctype html
@@ -20,6 +20,12 @@ html(lang="en")
     body 
         header
             +navBar(logo, indexLinks)
+            main
+                #hero-sec
+                    h1= heroTitle
+                    #cta-s
+                        a(data-href="./pages/html/signup.html") Sign Up
+                        a(data-href="./pages/html/login.html") Login
 
         //- Essential Scripts
         +loadScripts(indexScriptsPath)

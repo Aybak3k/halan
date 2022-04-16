@@ -1,6 +1,6 @@
 header {
     max-width: 100%;
-    height: 80vh;
+    height: 92vh;
     position: relative;
     background: var(--color2);
 
@@ -21,7 +21,7 @@ header {
                 padding-left: 20px;
                 float: left;
             // ?
-                line-height: 70px;  // fixed-size! - nav height
+                line-height: 8vh;  // fixed-size! - nav height
                 text-transform: uppercase;
                 font-size: 1.4em; // fixed-size!
                 font-weight: bold;
@@ -43,7 +43,7 @@ header {
                             display: block;
                         // fixed-size! - ?
                             padding: 10px 20px 0 20px;
-                            line-height: 50px; // fixed size
+                            line-height: 6.7vh;
                         color: var(--darkest);
                         font-weight: bold;
 

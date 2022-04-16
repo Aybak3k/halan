@@ -2,7 +2,7 @@
 - dark theme
     - * bg
     - local storage?
-
+- form validation
 
 ## easy
 - exclude the event trigger in nav to ▾ _but_ grouping is better UX
