@@ -2,7 +2,7 @@
 mixin customHead()
     //- 
 
-mixin head(title= "My Title", stylesPath="../../styles/css/", customHead)
+mixin head(title= "My Title", pageIcon="../../assets/images/ph.png", customHead)
         head
             meta(charset="UTF-8")
             meta(http-equiv="X-UA-Compatible", content="IE=edge")
@@ -13,5 +13,5 @@ mixin head(title= "My Title", stylesPath="../../styles/css/", customHead)
             meta(name="application-name", content="Halan")
             title= title
             //- link(rel="stylesheet", href=stylesPath+"index.css")
-            //- link(rel="icon", href=""+image)
+            link(rel="icon", href=pageIcon)
             +customHead()

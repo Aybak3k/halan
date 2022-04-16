@@ -8,6 +8,7 @@
 - exclude the event trigger in nav to ▾ _but_ grouping is better UX
 - js form validation
 - make form styles sharable
+- change spc-data links to one object with key value pairs
 
 
 ## hard
