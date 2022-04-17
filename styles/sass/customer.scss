@@ -41,7 +41,7 @@ aside {
         // for p width
             // min-width: 250px;
             // max-width: 300px;
-            width: 100%;
+            width: $side-bar-width;
         height:100%;
         @include box-shadow;
             // z-index: 999;
@@ -108,9 +108,40 @@ aside {
         }
     }
     
-    // button#My-Account {
-        // normal, hover, active
-    // }
+    button#My-Account {
+        all: unset;
+        background: var(--color1);
+        color: var(--color2);
+        padding: 10px 20px 10px 5px;
+        border-radius: 10px 0 0 10px;
+        transition: all $transition-duration ease-in-out;
+        cursor: pointer;
+        // rotate
+            writing-mode: vertical-lr;
+            transform: rotate(180deg);
+            span {
+                display: block;
+                height: 15px;
+                margin: auto 0;
+                margin-right: 2px;
+                transform: rotate(90deg);
+                transition: all $transition-duration ease-in-out;
+
+                &.open {
+                    transform: rotate(270deg);
+                }
+            }
+
+        &:hover {
+            background: var(--color1-darker);
+            color: var(--color2-darker);
+        }
+
+        &:active {
+            background: var(--color1-darker-2);
+            color: var(--color2-darker-2);
+        }
+    }
 }
 
 #dashboard {
