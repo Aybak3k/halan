@@ -21,7 +21,7 @@ html(lang="en")
     body 
         header
             +navBar(logo, customerLinks)
-            main
+            aside
                 #user-info
                     figure
                         img(src=pagesPhImg, alt="user image", srcset="")
@@ -35,8 +35,11 @@ html(lang="en")
                             +phoneIcon()
                         p +201000000000
                     button Edit Profile
+                button#My-Account My Account
+            main
                 #dashboard
 
 
         //- Essential Scripts
         +loadScripts()
+        script(src=pagesScriptsPath+"aside.js")

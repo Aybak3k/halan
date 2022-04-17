@@ -4,29 +4,61 @@
 // Vars
 $margin-bottom: 30px;
 
-main {
-    width: 100%;
-    height: 100%;
-    margin-top: 8vh;
-    padding: 15px;
-    @include flex-position($x:flex-start);  // ltr
+header {
+    position: relative;
+}
 
+main {
+    // *{outline: 1px solid cyan;}
+    width: 100%;
+    // cz fixed elements don't have reserved space
+        height: 100%;
+        margin-top: 8vh;
+    padding: 15px;
+    // display: grid;
+    // grid-template-columns: 2fr 8fr;
+    // * {overflow: auto;}
+}
     
-    *{outline:1px solid #333}
+
+aside {
+    $side-bar-width:250px;
+    $btn-show-width: 50px;
+    $aside-width: $side-bar-width + $btn-show-width;
+
+    position: absolute;
+    height: 100%;
+    width: $aside-width;
+    @include flex-position;
+    transform: translateX(-$side-bar-width);
+    transition: all $transition-duration ease-in-out;
+
+    &.shown {
+        transform: translateX(0);
+    }
 
     #user-info{
+        // for p width
+            // min-width: 250px;
+            // max-width: 300px;
+            width: 100%;
         height:100%;
-        width: 20%;
+        @include box-shadow;
+            // z-index: 999;
+        padding: 20px;
 
         figure {
-            width: 250px;
-            height: 250px;
-            @include flex-position($dir:column);  // @flex-method
+            $figure-height: 250px;
+            width: 100%;
+            height: $figure-height;
+            @include flex-position($dir:column,);  // @flex-method
             margin-bottom: $margin-bottom;
 
             img {
-                width: 70%;
-                height: 70%;
+                // circle: same dimensions value && border-radius
+                    width: $figure-height / 1.5;
+                    height: $figure-height / 1.5;
+                    object-fit: cover;
                 border-radius: 50%;
                 margin-bottom: 20px;  // @flex-method: instead of gap
             }
@@ -35,14 +67,17 @@ main {
                 font-weight: bold;
                 letter-spacing: .4px;
                 font-size: 1.1em;
+                // margin-left: $margin-bottom / 2;  // @flex-method: instead of gap
             }
         }
 
         .info-box {
-            width: 300px;
-            height: 30px;
+            width: 100%;
+            min-height: 30px;
             @include flex-position($x:flex-start);
             margin-bottom: $margin-bottom;  // @flex-method: instead of gap
+
+            p {overflow: hidden;word-wrap: break-word;width: 90%;}
 
             &:last-of-type {
                 margin-bottom: $margin-bottom + 10;
@@ -50,14 +85,13 @@ main {
             
             span.icon {
                 background: var(--color1);
-                border-radius: 50%;
-                @include flex-position;  // @flex-method: instead of gap
                 width: 25px;
                 height: 25px;
-                margin-right: $margin-bottom - 20;
-                path {
-                    fill: var(--color2);
-                }
+                border-radius: 50%;
+                @include flex-position;
+                margin-right: $margin-bottom / 3;
+
+                path {fill: var(--color2);}
             }
         }
 
@@ -67,17 +101,18 @@ main {
             color: var(--color2);
             padding: 10px 15px;
             border-radius: 12px;
-            margin: 0 25px;
             transition: all $transition-duration ease-in-out;
             cursor: pointer;
 
-            &:hover {
-                background: var(--color1-darker);
-            }
+            &:hover {background: var(--color1-darker);}
         }
     }
+    
+    // button#My-Account {
+        // normal, hover, active
+    // }
+}
 
-    #dashboard {
-        width: 70%;
-    }
+#dashboard {
+    display: none;
 }
