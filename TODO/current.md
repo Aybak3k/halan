@@ -3,4 +3,3 @@
 - dashboard @customer
 - worker
 - chat
-- payment

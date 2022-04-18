@@ -1,9 +1,25 @@
 // imports
 @import "index";
 
+
 // Vars
 $margin-bottom: 30px;
 
+
+// Animations
+@keyframes Fading {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0px)
+    }
+}
+
+
+// ...
 header {
     position: relative;
 }
@@ -31,7 +47,10 @@ aside {
     width: $aside-width;
     @include flex-position;
     transform: translateX(-$side-bar-width);
-    transition: all $transition-duration ease-in-out;
+
+    &,* {
+        transition: all $transition-duration ease-in-out;
+    }
 
     &.shown {
         transform: translateX(0);
@@ -101,7 +120,6 @@ aside {
             color: var(--color2);
             padding: 10px 15px;
             border-radius: 12px;
-            transition: all $transition-duration ease-in-out;
             cursor: pointer;
 
             &:hover {background: var(--color1-darker);}
