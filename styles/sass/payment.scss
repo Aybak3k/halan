@@ -70,7 +70,7 @@ main {
                 border-bottom: 1px solid var(--color1);
                 background: transparent;
                 transition: all $transition-duration ease-in-out;
-                color: red;
+                color: var(--darkest);
                 font-weight: bold;
                 margin-top: $input-margin-top;
                 

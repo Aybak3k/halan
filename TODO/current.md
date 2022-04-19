@@ -2,4 +2,3 @@
 
 - dashboard @customer
 - worker
-- chat
