@@ -7,6 +7,7 @@ let debugRole = "customer"
 
 document.querySelector("#chat-opener").addEventListener("click", _ => {
     document.querySelector("#chat-box").classList.toggle("shown")
+    document.querySelector("#start").classList.add("heading")
 })
 
 document.querySelector("#chat-form").addEventListener("submit", e => {

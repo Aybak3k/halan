@@ -8,7 +8,7 @@ $chat-form-height:35px;
     width: 286px;
     position: absolute;
     bottom: 0;
-    right: 18vw;
+    right: 12vw;
     @include flex-position($dir:column, $x:flex-start);
     @include box-shadow;
     transform: translateY($chat-box-height - $chat-opener-height);
@@ -69,6 +69,9 @@ $chat-form-height:35px;
                     color: var(--darkest);
                     justify-self: end;
                 }
+
+                &#start {transform: translate(-220px); transition: all ($transition-duration * 2) ease-in-out;}
+                &#start.heading {transform: translate(0);}
             }
         }
     }
